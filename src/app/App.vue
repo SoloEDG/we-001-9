@@ -4,6 +4,7 @@ import { RosterPanel } from "../features/roster";
 import { ActionPanel } from "../features/tactics";
 import { TurnOrder } from "../features/initiative";
 import { ReplayPanel, downloadArchive } from "../features/replay";
+import { ExportPanel } from "../features/export";
 import { key } from "../shared/document";
 import { useWorkspace } from "./workspace";
 const {
@@ -102,7 +103,7 @@ const {
           @play="playback.play(cursor)"
           @stop="playback.stop"
           @download="downloadArchive(session)"
-        />
+        /><ExportPanel :events="session.events" :initial="session.initial" />
       </aside>
     </div>
     <footer>
